@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سمر جروب للدعاية والإعلان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #1a73e8;
+      --blue-d:  #1558b0;
+      --gold:    #f5a623;
+      --gold-d:  #d4881a;
+      --green:   #25d366;
+      --green-d: #128c7e;
+      --dark:    #0d0d2b;
+      --card:    #ffffff;
+      --text:    #1a1a2e;
+      --muted:   #555577;
+      --bg:      #f0f4ff;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(145deg, #0d0d2b 0%, #1a1a4e 40%, #0d1f5c 100%);
+      min-height: 100vh;
+      padding: 20px 14px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ───── HEADER BADGE ───── */
+    .header-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .logo-circle {
+      width: 88px; height: 88px;
+      background: linear-gradient(135deg, var(--gold) 0%, #ff9800 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px rgba(245,166,35,.45);
+      border: 4px solid rgba(255,255,255,.25);
+      animation: pulse-logo 3s ease-in-out infinite;
+    }
+    @keyframes pulse-logo {
+      0%,100% { transform: scale(1);   box-shadow: 0 8px 32px rgba(245,166,35,.45); }
+      50%      { transform: scale(1.05); box-shadow: 0 12px 40px rgba(245,166,35,.65); }
+    }
+    .logo-circle svg { width: 46px; height: 46px; fill: #fff; }
+    .brand-name {
+      font-size: 1.5rem; font-weight: 900; color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,.4);
+      letter-spacing: .5px;
+    }
+    .brand-sub {
+      font-size: .85rem; color: rgba(255,255,255,.7);
+      font-weight: 600; letter-spacing: 1px;
+    }
+
+    /* ───── MAIN CARD ───── */
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      width: 100%; max-width: 520px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,.45);
+      position: relative;
+    }
+
+    /* top stripe */
+    .card-top {
+      background: linear-gradient(135deg, #1a1a4e 0%, #1a73e8 100%);
+      padding: 24px 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-top::after {
+      content: '';
+      position: absolute; bottom: -1px; left: 0; right: 0;
+      height: 28px;
+      background: var(--card);
+      border-radius: 28px 28px 0 0;
+    }
+    .card-top-inner { position: relative; z-index: 1; }
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+    }
+    .deco1 { width: 140px; height: 140px; top: -50px; left: -40px; }
+    .deco2 { width: 90px; height: 90px; bottom: -20px; right: 20px; }
+
+    .card-title {
+      font-size: 1.4rem; font-weight: 900; color: #fff;
+      line-height: 1.35; margin-bottom: 6px;
+    }
+    .card-city {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.18);
+      color: #fff; font-size: .82rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .card-city svg { width: 14px; height: 14px; fill: var(--gold); }
+
+    /* body */
+    .card-body { padding: 0 20px 24px; }
+
+    /* ── section heading ── */
+    .section-title {
+      font-size: .78rem; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 1.2px;
+      margin: 22px 0 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block; width: 4px; height: 16px;
+      background: var(--gold); border-radius: 2px;
+    }
+
+    /* ── platforms grid ── */
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .platform-item {
+      background: #f4f7ff;
+      border-radius: 14px;
+      padding: 12px 6px;
+      text-align: center;
+      font-size: .78rem; font-weight: 700; color: var(--text);
+      display: flex; flex-direction: column; align-items: center; gap: 7px;
+      border: 1.5px solid #e8eeff;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .platform-item:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(26,115,232,.15); }
+    .platform-item .icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .platform-item .icon svg { width: 24px; height: 24px; }
+
+    /* platform colors */
+    .p-google  .icon { background: #fff3e0; }
+    .p-fb      .icon { background: #e8f0fe; }
+    .p-ig      .icon { background: #fce4ec; }
+    .p-tt      .icon { background: #e8f5e9; }
+    .p-snap    .icon { background: #fffde7; }
+    .p-maps    .icon { background: #e3f2fd; }
+
+    /* ── features ── */
+    .features { display: flex; flex-direction: column; gap: 10px; }
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: #f9faff; border-radius: 12px;
+      padding: 11px 14px;
+      border: 1px solid #eef0ff;
+    }
+    .feature-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--blue) 0%, #5b9aff 100%);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-icon svg { width: 17px; height: 17px; fill: #fff; }
+    .feature-text { font-size: .85rem; font-weight: 600; color: var(--text); line-height: 1.5; }
+
+    /* ── coverage ── */
+    .coverage-list {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .coverage-tag {
+      background: linear-gradient(135deg, #1a1a4e 0%, #1a3a8e 100%);
+      color: #fff; font-size: .78rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .coverage-tag svg { width: 13px; height: 13px; fill: var(--gold); }
+
+    /* ── contact box ── */
+    .contact-box {
+      background: linear-gradient(135deg, #0d1a4e 0%, #1a3a8e 100%);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 22px;
+      text-align: center;
+    }
+    .contact-label { font-size: .78rem; color: rgba(255,255,255,.6); font-weight: 600; margin-bottom: 6px; }
+    .contact-number {
+      font-size: 1.5rem; font-weight: 900; color: var(--gold);
+      letter-spacing: 2px; direction: ltr; unicode-bidi: isolate;
+    }
+
+    /* ── CTA buttons ── */
+    .cta-row { display: flex; gap: 12px; margin-top: 18px; }
+    .btn {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      border: none; border-radius: 14px;
+      padding: 15px 10px;
+      font-family: 'Cairo', sans-serif; font-size: .92rem; font-weight: 800;
+      cursor: pointer; text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .btn-call {
+      background: linear-gradient(135deg, var(--blue) 0%, #4d9fff 100%);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(26,115,232,.4);
+    }
+    .btn-call:hover { box-shadow: 0 12px 32px rgba(26,115,232,.55); transform: translateY(-2px); }
+
+    .btn-wa {
+      background: linear-gradient(135deg, var(--green-d) 0%, var(--green) 100%);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(37,211,102,.35);
+    }
+    .btn-wa:hover { box-shadow: 0 12px 32px rgba(37,211,102,.5); transform: translateY(-2px); }
+
+    /* ── divider ── */
+    .divider {
+      height: 1px; background: #eef0ff; margin: 10px 0 0;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 18px; text-align: center;
+      font-size: .72rem; color: rgba(255,255,255,.4);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════
+       FLOATING CIRCULAR SIDE BUTTONS
+       ═══════════════════════════════ */
+    .float-btns {
+      position: fixed;
+      left: 14px; bottom: 90px;        /* right side for LTR: right:14px */
+      display: flex; flex-direction: column; gap: 14px;
+      z-index: 999;
+    }
+    .float-btn {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,.35);
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+    }
+    .float-btn:hover { transform: scale(1.12); }
+    .float-btn svg { width: 28px; height: 28px; fill: #fff; }
+
+    .float-wa   { background: linear-gradient(135deg, var(--green-d) 0%, var(--green) 100%); }
+    .float-call { background: linear-gradient(135deg, var(--blue-d)  0%, var(--blue)  100%); }
+
+    /* ripple ring */
+    .float-btn::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      animation: ring 2.5s ease-out infinite;
+    }
+    .float-wa::after   { border: 2px solid var(--green); }
+    .float-call::after { border: 2px solid var(--blue); }
+    @keyframes ring {
+      0%   { transform: scale(1);   opacity: .8; }
+      100% { transform: scale(1.85); opacity: 0; }
+    }
+
+    /* tooltip label */
+    .float-btn .tip {
+      position: absolute;
+      right: calc(100% + 10px);
+      background: rgba(0,0,0,.75);
+      color: #fff; font-size: .72rem; font-weight: 700;
+      white-space: nowrap; padding: 4px 10px; border-radius: 8px;
+      pointer-events: none; opacity: 0;
+      transition: opacity .2s;
+    }
+    .float-btn:hover .tip { opacity: 1; }
+
+    /* ── Responsive ── */
+    @media (min-width: 460px) {
+      .card-title { font-size: 1.6rem; }
+      .brand-name { font-size: 1.7rem; }
+      .float-btns { left: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header-badge">
+    <div class="logo-circle">
+      <!-- megaphone icon -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 3a1 1 0 0 0-1 1v.06l-13 4.31V8a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1.68l1.12 3.37A1 1 0 0 0 7.73 20H9a1 1 0 0 0 .95-.68L11.06 16H17v.06A1 1 0 1 0 19 16V4a1 1 0 0 0-1-1zM8.14 18H8l-1-3h2zm7.86-4H5V9h11zm2-1.74V7.74l2-.66v5.84z"/>
+      </svg>
+    </div>
+    <div class="brand-name">سمر جروب</div>
+    <div class="brand-sub">SAMAR GROUP — للدعاية والإعلان</div>
+  </header>
+
+  <!-- MAIN CARD -->
+  <div class="card">
+
+    <!-- TOP STRIPE -->
+    <div class="card-top">
+      <div class="deco-circle deco1"></div>
+      <div class="deco-circle deco2"></div>
+      <div class="card-top-inner">
+        <h1 class="card-title">إعلانات رقمية احترافية<br/>على جميع المنصات 🚀</h1>
+        <span class="card-city">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+          مصر · السعودية · الإمارات · الكويت · قطر
+        </span>
+      </div>
+    </div>
+
+    <div class="card-body">
+
+      <!-- PLATFORMS -->
+      <div class="section-title">المنصات الإعلانية</div>
+      <div class="platforms">
+
+        <!-- Google Ads -->
+        <div class="platform-item p-google">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z" fill="#4285F4"/>
+            </svg>
+          </div>
+          إعلانات جوجل
+        </div>
+
+        <!-- Facebook -->
+        <div class="platform-item p-fb">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
+            </svg>
+          </div>
+          فيس بوك
+        </div>
+
+        <!-- Instagram -->
+        <div class="platform-item p-ig">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#f09433"/>
+                  <stop offset="25%" stop-color="#e6683c"/>
+                  <stop offset="50%" stop-color="#dc2743"/>
+                  <stop offset="75%" stop-color="#cc2366"/>
+                  <stop offset="100%" stop-color="#bc1888"/>
+                </linearGradient>
+              </defs>
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#ig)"/>
+            </svg>
+          </div>
+          انستجرام
+        </div>
+
+        <!-- TikTok -->
+        <div class="platform-item p-tt">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z" fill="#25F4EE"/>
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89c0-.23.03-.45.08-.67A2.89 2.89 0 019.49 16.78a6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z" fill="#FE2C55" opacity=".5"/>
+            </svg>
+          </div>
+          تيك توك
+        </div>
+
+        <!-- Snapchat -->
+        <div class="platform-item p-snap">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.166.001c.121 0 .239.003.355.006 1.918.063 3.476.672 4.638 1.813 1.264 1.239 1.905 2.989 1.905 5.204v.654c0 .188-.004.37-.012.546l.018.004c.126.025.264.04.413.04.311 0 .674-.063 1.027-.218.157-.069.327-.102.487-.102.322 0 .614.114.791.308.237.261.265.577.08.897-.336.583-1.104.947-2.071 1.107l-.023.003c.015.088.031.18.05.274.039.194.101.411.189.645.105.283.237.51.384.67.149.162.269.355.269.571 0 .474-.468.871-1.057.969-.214.036-.393.052-.557.052-.308 0-.546-.053-.792-.108l-.044-.01c-.282.455-.635.864-1.041 1.209-.892.762-2.046 1.183-3.251 1.183-.106 0-.213-.003-.319-.01-1.206-.073-2.325-.548-3.155-1.328-.353-.331-.65-.705-.876-1.117l-.044.01c-.246.055-.484.108-.792.108-.164 0-.343-.016-.557-.052-.589-.098-1.057-.495-1.057-.969 0-.216.12-.409.269-.571.147-.16.279-.387.384-.67.088-.234.15-.451.189-.645.019-.094.035-.186.05-.274l-.023-.003c-.967-.16-1.735-.524-2.071-1.107-.185-.32-.157-.636.08-.897.177-.194.469-.308.791-.308.16 0 .33.033.487.102.353.155.716.218 1.027.218.149 0 .287-.015.413-.04l.018-.004a9.67 9.67 0 01-.012-.546V7.024c0-2.215.641-3.965 1.905-5.204C8.69.679 10.248.07 12.166.001zm0 1.598c-1.486.05-2.688.527-3.577 1.41-.993.974-1.496 2.409-1.496 4.015v.655c0 .272.013.536.036.79l.024.262-.27.002c-.29.001-.641-.033-.983-.16-.18-.067-.327-.151-.451-.246.269.323.785.613 1.464.771l.35.08-.087.35c-.05.199-.098.44-.151.708-.065.323-.148.686-.269 1.002-.135.365-.326.695-.547.932.07.013.147.021.231.021.254 0 .48-.069.611-.1l.323-.077.145.3c.198.41.47.784.795 1.094.698.655 1.657 1.026 2.649 1.087l.259.016c.987.002 1.982-.33 2.764-.982.41-.349.752-.78.999-1.257l.145-.28.309.074c.131.031.357.1.611.1.084 0 .161-.008.231-.021-.221-.237-.412-.567-.547-.932-.121-.316-.204-.679-.269-1.002-.053-.268-.101-.509-.151-.708l-.087-.35.35-.08c.679-.158 1.195-.448 1.464-.771-.124.095-.271.179-.451.246-.342.127-.693.161-.983.16l-.27-.002.024-.262c.023-.254.036-.518.036-.79V7.024c0-1.606-.503-3.041-1.496-4.015-.889-.883-2.091-1.36-3.577-1.41z" fill="#FFFC00"/>
+            </svg>
+          </div>
+          سناب شات
+        </div>
+
+        <!-- Google Maps -->
+        <div class="platform-item p-maps">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#EA4335"/>
+            </svg>
+          </div>
+          خرائط جوجل
+        </div>
+
+      </div><!-- /platforms -->
+
+      <!-- FEATURES -->
+      <div class="section-title">مميزات الخدمة</div>
+      <div class="features">
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <div class="feature-text">استهداف دقيق للجمهور المناسب حسب المنطقة والاهتمامات</div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+          </div>
+          <div class="feature-text">تقارير أداء تفصيلية وتحسين مستمر للحملات الإعلانية</div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+          </div>
+          <div class="feature-text">إدارة كاملة للميزانية الإعلانية مع ضمان أقصى عائد للاستثمار</div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div class="feature-text">تصميم إعلانات احترافية جذابة تناسب هوية علامتك التجارية</div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="feature-text">تواصل مباشر وسريع مع فريق متخصص على مدار الساعة</div>
+        </div>
+
+      </div><!-- /features -->
+
+      <!-- COVERAGE -->
+      <div class="section-title">التغطية الجغرافية</div>
+      <div class="coverage-list">
+        <span class="coverage-tag"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> مصر</span>
+        <span class="coverage-tag"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> السعودية</span>
+        <span class="coverage-tag"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> الإمارات</span>
+        <span class="coverage-tag"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> الكويت</span>
+        <span class="coverage-tag"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> قطر</span>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="divider" style="margin-top:22px;"></div>
+
+      <!-- CONTACT BOX -->
+      <div class="contact-box">
+        <div class="contact-label">📞 للتواصل والاستفسار</div>
+        <div class="contact-number">01097235239</div>
+      </div>
+
+      <!-- CTA BUTTONS -->
+      <div class="cta-row">
+        <a href="tel:01097235239" class="btn btn-call">
+          <!-- phone icon -->
+          <svg viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          اتصل الآن
+        </a>
+        <a href="https://wa.me/201097235239" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+          <!-- whatsapp icon -->
+          <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          واتساب
+        </a>
+      </div>
+
+    </div><!-- /card-body -->
+  </div><!-- /card -->
+
+  <p class="footer">© 2025 سمر جروب للدعاية والإعلان — جميع الحقوق محفوظة</p>
+
+  <!-- ══════════════════════════
+       FLOATING CIRCULAR BUTTONS
+       ══════════════════════════ -->
+  <div class="float-btns" aria-label="أزرار التواصل العائمة">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/201097235239" target="_blank" rel="noopener noreferrer"
+       class="float-btn float-wa" aria-label="واتساب">
+      <span class="tip">واتساب</span>
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- Call -->
+    <a href="tel:01097235239"
+       class="float-btn float-call" aria-label="اتصال">
+      <span class="tip">اتصال</span>
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+
+  </div>
+
+</body>
+</html>
